@@ -5,7 +5,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/helpers.sh"
 
 print_uptime() {
-    local T=$(awk -F" " '{print $1}' /proc/uptime)
+    local T=$(awk -F"." '{print $1}' /proc/uptime)
     local s=$((T%60))
     local m=$((T/60%60))
     local H=$((T/60/60%24))
